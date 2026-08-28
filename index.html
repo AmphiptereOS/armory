@@ -4,154 +4,121 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Amphiptere Armory - Official Tools | Amphiptere OS</title>
-<meta name="description" content="Amphiptere Armory - Official collection of security tools by Amphiptere OS. Includes Sentinel, Ops, Acid, Owl (exclusive to OS) and Huntdd-Ghost open-source.">
-<meta name="keywords" content="AmphiptereOS, Amphiptere OS, Amphiptere Armory, Huntdd-Ghost, Sentinel, Ops, Acid, Owl, Linux security tools">
+<meta name="description" content="Amphiptere Armory - Official toolset of Amphiptere OS. 5 security tools including 4 integrated tools and Huntdd-Ghost open-source.">
 <meta name="author" content="AmphiptereOS">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://amphiptereos.github.io/armory/">
 <link rel="icon" type="image/png" href="favicon.png">
+<link rel="canonical" href="https://amphiptereos.github.io/armory/">
 <meta property="og:title" content="Amphiptere Armory - Official Tools | AmphiptereOS">
-<meta property="og:description" content="Official tools from Amphiptere OS - 4 exclusive OS tools + 1 open-source.">
+<meta property="og:description" content="Official toolset of Amphiptere OS - Integrated security tools and open-source Huntdd-Ghost.">
 <meta property="og:image" content="https://amphiptereos.github.io/armory/armory.png">
 <meta property="og:url" content="https://amphiptereos.github.io/armory/">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HZDDNFE6F4"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);} gtag('js',new Date()); gtag('config','G-HZDDNFE6F4');</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#0a0a0a;color:#e5e5e5;font-family:Inter,system-ui,sans-serif;line-height:1.6}
 .nav{height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 24px;border-bottom:1px solid #1f1f1f;background:#0a0a0a;position:sticky;top:0;z-index:10}
-.nav b{letter-spacing:1px}
-.nav a{color:#888;text-decoration:none;font-size:13px;margin-left:16px}
-.nav a:hover{color:#fff}
+.nav b{letter-spacing:1px} .nav a{color:#888;text-decoration:none;font-size:13px;margin-left:16px} .nav a:hover{color:#fff}
 .hero{text-align:center;padding:80px 20px 40px;max-width:900px;margin:0 auto}
 .hero img{width:220px;height:220px;object-fit:contain;filter:drop-shadow(0 0 30px rgba(255,255,255,0.12));border-radius:20px;background:#111}
 .hero h1{font-family:monospace;letter-spacing:8px;font-size:52px;margin:24px 0 0;color:#fff}
-.hero .tag{color:#22d3ee;font-family:monospace;letter-spacing:3px;font-size:13px;margin-top:8px}
+.hero .tag{color:#888;font-family:monospace;letter-spacing:3px;font-size:12px;margin-top:8px;text-transform:uppercase}
 .btn-row{margin-top:32px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
 .btn{padding:10px 20px;border-radius:8px;font-weight:700;text-decoration:none;font-size:13px;display:inline-block;transition:.2s;border:1px solid #2a2a2a}
 .btn-white{background:#fff;color:#000} .btn-white:hover{background:#e5e5e5}
 .btn-dark{background:#141414;color:#fff} .btn-dark:hover{border-color:#444}
-.badge{font-size:10px;padding:4px 8px;border-radius:20px;letter-spacing:1px;margin-left:8px}
-.badge-lock{background:rgba(255,200,0,0.15);color:#ffcc00;border:1px solid rgba(255,200,0,0.3)}
-.badge-open{background:rgba(34,211,238,0.15);color:#22d3ee;border:1px solid rgba(34,211,238,0.3)}
+.badge{font-size:10px;padding:4px 10px;border-radius:20px;letter-spacing:0.8px;margin-left:8px;font-weight:600;text-transform:uppercase}
+.badge-integrated{background:#1a1a1a;color:#aaa;border:1px solid #2a2a2a}
+.badge-open{background:#111;color:#fff;border:1px solid #333}
 section{max-width:900px;margin:0 auto;padding:20px 20px 0}
-.card{background:#141414;border:1px solid #222;border-radius:14px;padding:28px;margin-top:20px;position:relative}
-.card h2{font-family:monospace;color:#fff;font-size:20px;margin-bottom:12px;letter-spacing:1px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.card{background:#141414;border:1px solid #222;border-radius:14px;padding:28px;margin-top:20px}
+.card h2{font-family:monospace;color:#fff;font-size:19px;margin-bottom:12px;letter-spacing:0.5px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .card h2 img{width:42px;height:42px;border-radius:8px;background:#0a0a0a;object-fit:contain}
-.card h3{color:#fff;font-size:15px;margin:16px 0 8px}
-.card p, .card li{color:#999;font-size:14.5px}
-.card ul{padding-left:18px;margin-top:8px}
-.card li{margin:6px 0}
-.card b{color:#d4d4d4}
-pre{background:#0e0e0e;border:1px solid #232323;border-radius:8px;padding:16px;overflow:auto;font-size:13px;color:#7dd3fc;margin-top:12px}
-code{background:#1a1a1a;padding:2px 6px;border-radius:4px;color:#7dd3fc;font-size:13px}
+.card h3{color:#fff;font-size:14px;margin:18px 0 8px;text-transform:uppercase;letter-spacing:0.8px}
+.card p, .card li{color:#999;font-size:14.5px} .card ul{padding-left:18px;margin-top:8px} .card li{margin:6px 0} .card b{color:#d4d4d4}
+pre{background:#0e0e0e;border:1px solid #232323;border-radius:8px;padding:16px;overflow:auto;font-size:13px;color:#9ca3af;margin-top:12px}
+code{background:#1a1a1a;padding:2px 6px;border-radius:4px;color:#9ca3af;font-size:13px}
 .footer{text-align:center;color:#444;padding:50px 20px;font-size:12px;border-top:1px solid #1a1a1a;margin-top:50px}
 </style>
 </head>
 <body>
-
 <div class="nav">
 <div><b>AMPHIPTEREOS</b><span style="color:#555;margin-left:8px">/ ARMORY</span></div>
-<div>
-<a href="https://github.com/AmphiptereOS">Main OS</a>
-<a href="https://youtube.com/@amphiptere-os">YouTube</a>
+<div><a href="https://github.com/AmphiptereOS">Main OS</a><a href="https://youtube.com/@amphiptere-os">YouTube</a></div>
 </div>
-</div>
-
 <div class="hero">
 <img src="armory.png" alt="Amphiptere Armory">
 <h1>ARMORY</h1>
-<div class="tag">4 OS EXCLUSIVE + 1 OPEN SOURCE • AMPHIPTERE OS</div>
+<div class="tag">Official Toolset of Amphiptere OS</div>
 <div class="btn-row">
-<a class="btn btn-white" href="#huntdd">Huntdd-Ghost [OPEN]</a>
-<a class="btn btn-dark" href="#sentinel">Sentinel [OS ONLY]</a>
-<a class="btn btn-dark" href="#ops">Ops [OS ONLY]</a>
-<a class="btn btn-dark" href="#acid">Acid [OS ONLY]</a>
-<a class="btn btn-dark" href="#owl">Owl [OS ONLY]</a>
+<a class="btn btn-white" href="#huntdd">Huntdd-Ghost — Open Source</a>
+<a class="btn btn-dark" href="#sentinel">View Integrated Tools</a>
 </div>
 </div>
-
 <section>
 
 <div class="card" id="sentinel">
-<h2><img src="amphiptere-sentinel.png"> Amphiptere Sentinel <span class="badge badge-lock">🔒 AMPHIPTERE OS ONLY</span></h2>
+<h2><img src="amphiptere-sentinel.png"> Amphiptere Sentinel <span class="badge badge-integrated">Integrated in Amphiptere OS</span></h2>
 <h3>What is Amphiptere Sentinel?</h3>
 <p>Amphiptere Sentinel is a perimeter defense tool. It manages system firewall rules (iptables) and listens on TCP port 9999 to secure access using a temporary passcode mechanism.</p>
-<h3>About Amphiptere Sentinel</h3>
-<p>Written in Go. Exclusive to Amphiptere OS. Not available as standalone open-source download.</p>
-<h3>Amphiptere Sentinel Commands</h3>
-<p>To run or manage the tool inside Amphiptere OS, execute it with root or sudo privileges:</p>
+<h3>About</h3>
+<p>Sentinel is pre-installed and configured within Amphiptere OS to provide system-level perimeter defense.</p>
+<h3>Commands</h3>
 <p><b>Enable Defense</b></p><pre>sudo go run amphiptere.go --enable</pre>
 <p><b>Disable Defense</b></p><pre>sudo go run amphiptere.go --disable</pre>
 <p><b>Check Status</b></p><pre>sudo go run amphiptere.go --status</pre>
 </div>
 
 <div class="card" id="ops">
-<h2><img src="amphiptere-ops.png"> Amphiptere-Ops <span class="badge badge-lock">🔒 AMPHIPTERE OS ONLY</span></h2>
+<h2><img src="amphiptere-ops.png"> Amphiptere-Ops <span class="badge badge-integrated">Integrated in Amphiptere OS</span></h2>
 <h3>What is Amphiptere-Ops?</h3>
-<p>Amphiptere-Ops is a unified purple team utility written in Go. It performs simulated vulnerability scanning (red team perspective) alongside defense verification (blue team perspective), and automatically compiles the results into a structured text report.</p>
-<h3>About Amphiptere-Ops</h3>
-<p>Exclusive to Amphiptere OS environment.</p>
-<h3>Amphiptere-Ops Commands</h3>
-<pre>go run amphiptere-ops.go</pre>
-<h3>What Happens When You Run It:</h3>
+<p>Amphiptere-Ops is a unified purple team utility. It performs simulated vulnerability scanning alongside defense verification and compiles results into a structured text report.</p>
+<h3>Workflow</h3>
 <ul>
-<li><b>Banner & Authorization Display:</b> Prints the tool banner and notices the authorization disclaimer.</li>
-<li><b>Phase 1 (Red Team Scan):</b> Automatically cycles through simulated weaknesses and misconfigurations (such as Open Port 22, outdated packages, loose file permissions, and default configurations).</li>
-<li><b>Phase 2 (Blue Team Verification):</b> Verifies corresponding defensive controls, checks logs/firewalls, and outputs pass/fail status metrics.</li>
-<li><b>Phase 3 (Report Generation):</b> Compiles all data and saves it locally into a text file named report.txt.</li>
+<li><b>Banner & Authorization Display:</b> Prints the tool banner and authorization notice.</li>
+<li><b>Phase 1 - Red Team Scan:</b> Cycles through simulated weaknesses such as open ports, outdated packages, and loose file permissions.</li>
+<li><b>Phase 2 - Blue Team Verification:</b> Verifies defensive controls and outputs pass/fail metrics.</li>
+<li><b>Phase 3 - Report Generation:</b> Saves results locally to report.txt.</li>
 </ul>
+<pre>go run amphiptere-ops.go</pre>
 </div>
 
 <div class="card" id="acid">
-<h2><img src="acid-cracker.png"> Acid Cracker <span class="badge badge-lock">🔒 AMPHIPTERE OS ONLY</span></h2>
+<h2><img src="acid-cracker.png"> Acid Cracker <span class="badge badge-integrated">Integrated in Amphiptere OS</span></h2>
 <h3>What is Acid?</h3>
-<p>Acid is an offline high-performance password and hash-cracking tool written in Go. It performs wordlist-based SHA-256 brute-force evaluations for security assessments, audits, and password testing.</p>
-<h3>Acid Commands</h3><pre>go run acid.go -hash &lt;sha256_hash&gt; -wordlist &lt;path_to_wordlist.txt&gt;</pre>
-<p>Exclusive to Amphiptere OS. Not distributed as open-source.</p>
+<p>Acid is an offline high-performance password and hash-cracking tool written in Go. It performs wordlist-based SHA-256 brute-force evaluations for security assessments and audits.</p>
+<pre>go run acid.go -hash &lt;sha256_hash&gt; -wordlist &lt;path_to_wordlist.txt&gt;</pre>
 </div>
 
 <div class="card" id="owl">
-<h2><img src="owl-auditor.png"> OWL-Auditor <span class="badge badge-lock">🔒 AMPHIPTERE OS ONLY</span></h2>
+<h2><img src="owl-auditor.png"> OWL-Auditor <span class="badge badge-integrated">Integrated in Amphiptere OS</span></h2>
 <h3>What is Owl-Auditor?</h3>
-<p>Owl-Auditor is a lightweight, high-performance host and attack surface intelligence engine written in Go. It performs localized security audits to inspect system configurations, file permissions, firewall statuses, and active listening ports before adversaries can leverage them.</p>
-<h3>Owl-Auditor Commands</h3>
+<p>Owl-Auditor is a lightweight host and attack surface intelligence engine. It performs localized security audits to inspect system configurations, file permissions, firewall statuses, and active listening ports.</p>
 <pre>go run owl-auditor.go</pre>
 <pre>go run owl-auditor.go -ip &lt;target_ip&gt;</pre>
-<p>Exclusive to Amphiptere OS.</p>
 </div>
 
-<div class="card" id="huntdd" style="border-color:#22d3ee;box-shadow:0 0 20px rgba(34,211,238,0.15)">
-<h2><img src="huntdd-ghost.png"> Huntdd-Ghost <span class="badge badge-open">✅ OPEN SOURCE</span></h2>
+<div class="card" id="huntdd" style="border-color:#333">
+<h2><img src="huntdd-ghost.png"> Huntdd-Ghost <span class="badge badge-open">Open Source</span></h2>
 <h3>What is Huntdd-Ghost?</h3>
-<p>Huntdd-Ghost is a lightweight, local-only filesystem auditing tool written in Go. It performs deep enumeration and hash-based vulnerability audits to scan directories for sensitive files, misconfigurations, and insecure permissions.</p>
+<p>Huntdd-Ghost is a lightweight, local-only filesystem auditing tool written in Go. It performs deep enumeration and hash-based audits to scan directories for sensitive files, misconfigurations, and insecure permissions.</p>
 <h3>Availability</h3>
-<p><b style="color:#22d3ee">This is the only open-source tool from Armory.</b> Available on GitHub for public use.</p>
-<h3>Huntdd-Ghost Commands</h3>
-<p><b>Default Scan (Current Directory)</b></p><pre>go run huntdd.go</pre>
-<p><b>Custom Target Scan Path</b></p><pre>go run huntdd.go -scan &lt;directory_path&gt;</pre>
-<p>Example:</p><pre>go run huntdd.go -scan /path/to/your/files</pre>
+<p>This tool is open-source and available for public use as a preview from the Amphiptere Armory.</p>
+<h3>Commands</h3>
+<p><b>Default Scan</b></p><pre>go run huntdd.go</pre>
+<p><b>Custom Target Scan</b></p><pre>go run huntdd.go -scan &lt;directory_path&gt;</pre>
 </div>
 
-<div class="card" style="border-color:#a855f7;background:rgba(168,85,247,0.08);box-shadow:0 0 20px rgba(168,85,247,0.15)">
-<h2 style="color:#c084fc">⚠ Disclaimer</h2>
-<p style="color:#d8b4fe">
-All tools in Amphiptere Armory including <b style="color:#e9d5ff">Amphiptere Sentinel, Amphiptere-Ops, Acid Cracker, Owl-Auditor</b> are exclusive to <b style="color:#e9d5ff">Amphiptere OS</b> and are not distributed as open-source. <b style="color:#e9d5ff">Huntdd-Ghost is the only open-source tool</b> from this collection.
+<div class="card" style="background:#121212;border-color:#222">
+<h2 style="color:#fff;font-size:14px">Disclaimer</h2>
+<p style="color:#888">
+Amphiptere Sentinel, Amphiptere-Ops, Acid Cracker, and Owl-Auditor are integrated components of Amphiptere OS. Huntdd-Ghost is provided as an open-source preview from the Armory.
 <br><br>
-All tools are created for <b style="color:#e9d5ff">educational, defensive research, and authorized security testing only</b> on systems you own or have explicit permission to test. AmphiptereOS is not responsible for any misuse, damage, or legal consequences.
-<br><br>
-Use responsibly: defend, audit, and learn: don't disrupt or exploit.
+All tools are intended for educational, defensive research, and authorized security testing only on systems you own or have explicit permission to test. AmphiptereOS is not responsible for misuse.
 </p>
 </div>
 
 </section>
-
-<div class="footer">
-© 2026 AmphiptereOS • Armory is part of AmphiptereOS Tools<br>
-For educational, defensive research, and authorized testing only.
-</div>
-
+<div class="footer">© 2026 AmphiptereOS - Armory is part of AmphiptereOS<br>For educational and authorized testing only.</div>
 </body>
 </html>
